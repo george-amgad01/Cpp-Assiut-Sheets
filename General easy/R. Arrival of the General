@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define nl '\n'
+#define George ios_base::sync_with_stdio(false); cin.tie(0);cout.tie(0)
+void solve() {
+    ll n ; cin >> n;
+    ll arr[n] ;
+    ll sum = 0 ;
+    for(ll i = 0 ; i < n ; i++) {cin >> arr[i];}
+    ll maxi = *max_element(arr, arr + n);
+    ll mini = *min_element(arr, arr + n);
+    ll ind_max = 0 ; ll ind_min = 0;
+    for (ll i = 0 ; i < n ; i++) {
+        if (arr[i] == maxi) {ind_max = i ;break;}
+    }
+    for (ll i = n-1 ; i >= 0; i--) {
+        if (arr[i] == mini) {ind_min = i ;break;}
+    }
+    if (ind_min<ind_max) {sum = ( n -1 - ind_min ) + (ind_max) -1 ; cout << sum ;}
+    else {sum = ( n -1 - ind_min ) + (ind_max) ; cout << sum ;}
+    }
+
+
+int main() {
+    George;
+    int t = 1 ;
+    //cin >> t;
+
+    while (t--)
+        solve();
+
+}
