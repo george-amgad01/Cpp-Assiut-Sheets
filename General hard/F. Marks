@@ -1,0 +1,33 @@
+#include <iostream>
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std ;
+int main () {
+    ll n , m ; cin >> n >> m ;
+    string arr [n]  ;
+    ll arr2 [m] ;
+    ll cnt = 0 ;
+    ll cnt2 = 0 ;
+    ll cnt3= 0 ;
+
+    for (int i = 0 ; i < n ; ++i ) {
+        cin >> arr[i] ;
+    }
+
+    for (int k = 0 ; k < n ; ++k) {
+        string goal = arr[k] ;
+        cnt = 1  ;
+        cnt2 = 0 ;
+        for (int i = 0 ; i <m; ++i) {
+            cnt =1 ;
+            for (int j = 0 ; j < n ; ++j) {
+                if (j == k ) {continue ; }
+                if (goal [i] < arr[j][i]) {cnt =0 ;}
+            }
+            if (cnt ==1 ) {cnt2 = 1 ;  break ;}
+        }
+        cnt3 += cnt2 ;
+        }
+        cout << cnt3 ;
+
+}
