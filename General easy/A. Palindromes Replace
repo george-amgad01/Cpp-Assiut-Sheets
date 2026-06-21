@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define nl '\n'
+#define George ios_base::sync_with_stdio(false); cin.tie(0);cout.tie(0)
+void solve() {
+    string s ; cin >> s ;
+    ll n = s.size();
+    ll j = n-1 ;
+    bool found = 0 ;
+    for (ll i = 0 ; i < n ; i++) {
+        if (i==j) {if (s[i] == '?') {s[i] = 'a';}break;}
+        if (s[i] == '?'&& s[j]!='?') {s.replace(i,1,1,s[j]);}
+        else if (s[j] == '?' && s[i]!='?') {s.replace(j,1,1,s[i]);}
+        else if (s[j] == '?' && s[i]=='?') {s.replace(j,1,1,'a');s.replace(i,1,1,'a');}
+        j-=1 ;
+    }
+    ll k = n-1 ;
+    for (ll i = 0 ; i < n ; i++) {
+        if (i == k ) {break;}
+        if ((s[i]!= s[k])) {found = true; break;}
+        k-=1 ;
+    }
+    if (found) cout << -1;
+    else cout << s;
+}
+
+int main() {
+    George;
+    int t = 1;
+    //cin >> t;
+
+    while (t--)
+        solve();
+
+}
