@@ -1,0 +1,20 @@
+#include <iostream>
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std ;
+int main () {
+    ll n ; cin >> n ;
+    ll arr [n] ;
+    ll t_cnt = 0 ; ll cnt2 = 0 ; ll cnt3 = 0 ;
+    for (int i = 0 ; i < n ; ++i) {
+        cin >>arr[i] ;
+        t_cnt += arr[i] ;
+    }
+    sort (arr,arr+n,greater<int>()) ;
+    for (int i = 0 ; i < n ; ++i) {
+        cnt2 += arr[i] ;
+        cnt3 +=1 ;
+        t_cnt -= arr [i] ;
+        if (cnt2 > t_cnt) {cout << cnt3; break ;}
+    }
+}
