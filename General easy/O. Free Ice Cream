@@ -1,0 +1,23 @@
+#include <iostream>
+#include <bits/stdc++.h>
+#define ll long long
+#define nl "\n"
+using namespace std ;
+
+int main () {
+    ll n , x ; cin >> n >> x ;
+    char ch [n] ; ll arr [n] ;
+    ll cnt =0 ;
+    for (int i= 0 ; i < n ; ++i) {
+        cin >> ch[i] >> arr[i] ;
+    }
+    for (int i =0 ; i <n ; ++i ) {
+        ll target = arr[i] ;
+        if (ch[i] == '-'){
+            if (target <= x ) {x -= target ;}
+            else cnt +=1 ;
+        }
+        else {x+= target ;}
+    }
+    cout << x << " " << cnt ;
+}
