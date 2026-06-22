@@ -32,3 +32,35 @@ int main() {
         solve();
 
 }
+///////sol2
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define nl '\n'
+#define George ios_base::sync_with_stdio(false); cin.tie(0);cout.tie(0)
+void solve() {
+    ll n ; cin >> n ;
+    vector<ll> one , two , three ;
+
+    for (ll i = 0 ; i < n ; i++) {
+        ll num ;
+        cin >> num ;
+        if (num == 1) {one.push_back(i+1);}
+        if (num == 2) {two.push_back(i+1);}
+        if (num == 3) {three.push_back(i+1);}
+    }
+    ll mini = min ({one.size(), two.size(), three.size()});
+    cout << mini <<nl;
+    for (ll i = 0 ; i < mini ; i++) {
+        cout << one[i] << " " << two[i] << " " << three[i] << nl;
+    }
+}
+int main() {
+    George;
+    int t = 1;
+    //cin >> t;
+
+    while (t--)
+        solve();
+
+}
