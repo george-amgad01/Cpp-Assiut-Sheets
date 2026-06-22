@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define nl '\n'
+#define George ios_base::sync_with_stdio(false); cin.tie(0);cout.tie(0)
+void solve() {
+    ll n ; cin >> n ;
+    vector<ll> v(n);
+    for(ll i = 0 ; i < n ; i++) {
+    cin >> v[i];
+    }
+    ll n1 = count(v.begin(), v.end(), 1);
+    ll n2 = count(v.begin(), v.end(), 2);
+    ll n3 = count(v.begin(), v.end(), 3);
+    ll m= min (n1,n2) ; ll mini = min (m , n3) ;
+    cout << mini << nl ;
+    for (ll i = 0 ; i < mini ; i++) {
+            ll ind = find(v.begin(), v.end(), 1) - v.begin();
+            ll ind2 = find(v.begin(), v.end(), 2) - v.begin();
+            ll ind3 = find(v.begin(), v.end(), 3) - v.begin();
+            cout << ind+1 << " " << ind2+1 << " " << ind3+1 << nl ;
+            v[ind] = 0 ; v[ind2] = 0 ; v[ind3] = 0 ;
+        }
+}
+
+int main() {
+    George;
+    int t = 1;
+    //cin >> t;
+
+    while (t--)
+        solve();
+
+}
