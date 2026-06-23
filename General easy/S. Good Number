@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define nl '\n'
+#define George ios_base::sync_with_stdio(false); cin.tie(0);cout.tie(0)
+void solve() {
+    ll n, k ;
+    cin >> n>>k;
+    ll cnt = 0 ;
+    ll arr[10] = {'0','1','2','3','4','5','6','7','8','9'};
+    ll found = 0;
+    for(ll i=0;i<n;i++) {
+        string s;
+        cin >> s;
+        for(ll j=0; j<=k ;j++) {
+            ll num = count (s.begin(), s.end(), arr[j]);
+            if (num == 0) {found = 1;break;}
+            num = 0 ;
+        }
+        if (not found) {cnt+=1;}
+        found = 0;
+    }
+    cout << cnt << nl ;
+
+
+}
+int main() {
+    George;
+    int t = 1;
+    //cin >> t;
+
+    while (t--)
+        solve();
+
+}
