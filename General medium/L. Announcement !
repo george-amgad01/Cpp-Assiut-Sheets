@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define nl '\n'
+#define George ios_base::sync_with_stdio(false); cin.tie(0);cout.tie(0)
+void solve() {
+    ll n ; cin >> n ;
+    vector<ll> v(n);
+    set < ll > s;
+    for (ll i = 0 ; i < n ; i++) {
+        cin >> v[i];
+        s.insert(v[i]);
+    }
+    if (s.size()==v.size()) {
+        cout << -1 ;
+    }
+    else {
+        cout << v.size() - s.size();
+    }
+}
+int main() {
+    George;
+    int t = 1;
+    //cin >> t;
+
+    while (t--)
+        solve();
+
+}
