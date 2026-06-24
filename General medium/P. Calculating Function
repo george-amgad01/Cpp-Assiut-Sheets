@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define nl '\n'
+#define George ios_base::sync_with_stdio(false); cin.tie(0);cout.tie(0)
+void solve() {
+    ll n; cin >> n;
+    ll res = (n*(n+1)) / 2 ;
+    if (n % 2 == 0 ) {
+        ll mid = ((res - (n/2)) / 2) ;
+        ll pos = mid + (n/2) ;
+        ll neg = - mid ;
+        cout << pos + neg ;
+    }
+    else {
+        ll m = (n / 2) +1 ;
+        ll mid = (res - m ) / 2 ;
+        ll pos = mid ;
+        ll neg = - mid - m   ;
+        cout << pos + neg ;
+    }
+}
+int main() {
+    George;
+    int t = 1;
+    //cin >> t;
+
+    while (t--)
+        solve();
+
+}
