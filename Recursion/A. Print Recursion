@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define nl '\n'
+#define George ios_base::sync_with_stdio(false); cin.tie(0);cout.tie(0)
+void solve() {
+}
+void print_data (ll n){
+    if (n == 0) {
+        return;
+    }
+    cout << "I love Recursion" << nl;
+    return print_data(n-1);
+}
+
+int main() {
+    George;
+    int t = 1;
+
+    //cin >> t;
+    while (t--) {
+        ll n ; cin >> n;
+        print_data (n);
+        solve();
+    }
+}
