@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define nl '\n'
+#define George ios_base::sync_with_stdio(false); cin.tie(0);cout.tie(0)
+void solve() {
+}
+void N_to_one (ll n ) {
+    cout << n << nl ;
+    if (n ==1 ) {
+        return ;
+    }
+    return N_to_one (n-1) ;
+}
+
+
+int main() {
+    George;
+    int t = 1;
+    ll n ; cin >> n;
+    //cin >> t;
+    while (t--) {
+        N_to_one (n) ;
+        solve();
+    }
+}
