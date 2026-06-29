@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define nl '\n'
+#define George ios_base::sync_with_stdio(false); cin.tie(0);cout.tie(0)
+void solve() {
+
+}
+ll suffix_sum (vector<ll>& v , ll n , ll goal, ll size) {
+    static ll res = 0  ;
+    if (n == size - goal ) { // 1
+        return res ;
+    }
+    res += v[n-1] ;     /// 4 + 3 + 2
+    return suffix_sum(v, n-1, goal ,size );
+}
+
+
+
+int main() {
+    George;
+    int t =1 ;
+    //cin >> t;
+    ll n , goal ; cin >> n >> goal ;
+    ll size = n ;
+    vector <ll> v(n);
+    for (ll i = 0 ; i < n ; i++) {
+        cin >> v[i];
+    }
+    while (t--) {
+        cout<< nl ;
+        cout << suffix_sum (v , n, goal , size);
+        solve();
+    }
+}
