@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define nl '\n'
+#define George ios_base::sync_with_stdio(false); cin.tie(0);cout.tie(0)
+void solve() {
+}
+
+void print_digits (string s , ll n) {
+    if (n == 0) {
+        return;
+    }
+
+    print_digits (s , n-1);
+    cout << s[n-1] << " " ;
+}
+
+
+int main() {
+    George;
+    int t ;
+    cin >> t;
+    while (t--) {
+        string s ; cin >> s;
+        ll n = s.size();
+        print_digits (s,n);
+        cout << nl ;
+
+        solve();
+    }
+}
