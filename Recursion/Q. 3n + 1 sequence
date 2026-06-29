@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define nl '\n'
+#define George ios_base::sync_with_stdio(false); cin.tie(0);cout.tie(0)
+void solve() {
+}
+ll three_n_seq (ll n) {
+    static ll cnt = 1 ;
+    if (n ==1 ) {
+        return cnt ;
+    }
+    if (n%2 == 0) {
+        cnt ++ ;
+        return three_n_seq (n/2);
+    }
+    else {
+        cnt ++ ;
+        return three_n_seq (3*n+1);
+    }
+}
+
+int main() {
+    George;
+    int t = 1;
+
+    //cin >> t;
+    while (t--) {
+        ll n ; cin >> n;
+        cout <<  three_n_seq (n);
+        solve();
+    }
+}
