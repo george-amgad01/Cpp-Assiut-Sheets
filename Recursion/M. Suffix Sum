@@ -6,30 +6,25 @@ using namespace std;
 void solve() {
 
 }
-ll suffix_sum (vector<ll>& v , ll n , ll goal, ll size) {
-    static ll res = 0  ;
-    if (n == size - goal ) { // 1
-        return res ;
+ll suffix_sum ( vector <ll>& v , ll n , ll goal ) {
+    if (goal == 0 ) {
+        return 0;
     }
-    res += v[n-1] ;     /// 4 + 3 + 2
-    return suffix_sum(v, n-1, goal ,size );
+    return v[n-1] + suffix_sum (v , n-1, goal-1);
 }
-
-
 
 int main() {
     George;
     int t =1 ;
     //cin >> t;
     ll n , goal ; cin >> n >> goal ;
-    ll size = n ;
     vector <ll> v(n);
     for (ll i = 0 ; i < n ; i++) {
         cin >> v[i];
     }
     while (t--) {
         cout<< nl ;
-        cout << suffix_sum (v , n, goal , size);
+        cout << suffix_sum (v , n, goal);
         solve();
     }
 }
