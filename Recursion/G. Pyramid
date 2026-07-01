@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define nl '\n'
+#define George ios_base::sync_with_stdio(false); cin.tie(0);cout.tie(0)
+void solve() {
+
+}
+void pyramid (ll n , ll space , ll cnt) {
+    if (n == 0 ) {
+        return ;
+    }
+    for ( ll i = 0 ; i < space ; i++ ) {
+        cout << " " ;
+    }
+    for ( ll i = 0 ; i <cnt ; i++ ) {
+        cout << "*";
+    }
+    cout << nl;
+    pyramid(n-1,space-1,cnt+2);
+}
+
+int main() {
+    George;
+    int t =1  ;
+    //cin >> t;
+    while (t--) {
+        ll n ; cin >> n ;
+        ll space = n-1 ;
+        ll cnt = 1 ;
+        pyramid(n,space,cnt);
+        solve();
+    }
+}
