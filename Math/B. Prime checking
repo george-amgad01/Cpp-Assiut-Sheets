@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define nl '\n'
+#define George ios_base::sync_with_stdio(false); cin.tie(0);cout.tie(0)
+void solve() {
+    ll n; cin >> n ;
+    bool found = 0 ;
+    if (n < 2) {
+        cout << "NO" ;
+    }
+
+    else {
+        for (ll i = 2; i * i <= n; i++) {
+            if (n % i == 0) {found =1 ;break;}
+        }
+        cout << (not found ? "YES" : "NO") ;
+    }
+}
+
+int main() {
+    George;
+    int t =1 ;
+    //cin >> t;
+    while (t--) {
+        solve();
+    }
+}
