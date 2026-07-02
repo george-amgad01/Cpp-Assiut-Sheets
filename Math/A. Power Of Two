@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define nl '\n'
+#define George ios_base::sync_with_stdio(false); cin.tie(0);cout.tie(0)
+void solve() {
+    ll n; cin >> n ;
+    ll res = 1 ;
+
+    if (n == 1) {
+        cout << "YES" ;
+    }
+
+    else {
+        for (ll i = 0; i <= 60; i++) {
+            res *= 2 ;
+            if (res == n ) {
+                cout << "YES" ; break;
+            }
+            else if (res > n ) {
+                cout << "NO" ; break;}
+        }
+    }
+}
+
+int main() {
+    George;
+    int t =1 ;
+    //cin >> t;
+    while (t--) {
+        solve();
+    }
+}
