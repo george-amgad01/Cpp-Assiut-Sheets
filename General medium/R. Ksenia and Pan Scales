@@ -1,0 +1,99 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define nl '\n'
+#define George ios_base::sync_with_stdio(false); cin.tie(0);cout.tie(0)
+void solve() {
+    string s , s2 ; cin >> s >> s2 ;
+    ll n = s.size();
+    ll n2 = s2.size();
+    ll cnt = 0 , cnt2 = 0 ;
+    ll ind = 0 ;
+    for (ll i = 0 ; i < n ; i++) {
+        if (s[i] == '|') {
+            ind = i;
+            break;
+        }
+    }
+        for (ll i = 0 ; i < n ; i++) {
+            if (i < ind ) {
+                cnt ++;
+            }
+            if (i > ind ) {
+                cnt2 ++ ;
+            }
+        }
+    if (cnt > cnt2 && (n2 - cnt-cnt2) % 2 == 0 && (n2 >= cnt-cnt2) ) {
+        ll mid = n2 / 2 ;
+        string s3 = s.substr(0,cnt) ;
+        string s4 = s.substr(cnt,n-cnt) ;
+        for (ll i = 0 ; i < n2 ; i++) {
+            if (i < cnt - cnt2) {
+                s4.push_back(s2[i]);
+            }
+            else {
+                if (i%2 == 0) {
+                    s3.push_back(s2[i]);
+                }
+                else {
+                    s4.push_back(s2[i]);
+                }
+            }
+        }
+        for (ll i = 0 ; i < s4.size() ; i++) {
+            s3.push_back(s4[i]);
+        }
+        cout << s3;
+    }
+    else if (cnt2 > cnt && ((n2 - cnt2-cnt) %2 == 0) && (n2 >= cnt2-cnt) ) { // RIGHT > LEFT --
+            ll mid = n2 / 2 ;
+            string s3 = s.substr(0,cnt) ;
+            string s4 = s.substr(cnt,n-cnt) ;
+            for (ll i = 0 ; i < n2 ; i++) {
+                if (i < cnt2 - cnt) {
+                    s3.push_back(s2[i]);
+                }
+                else {
+                    if (i%2 == 0) {
+                        s3.push_back(s2[i]);
+                    }
+                    else {
+                        s4.push_back(s2[i]);
+                    }
+                }
+            }
+            for (ll i = 0 ; i < s4.size() ; i++) {
+                s3.push_back(s4[i]);
+            }
+            cout << s3;
+        }
+    else if (cnt == cnt2 && n2 % 2 == 0) { // LEFT = RIGHT __ NEXT LINE IS EVEN
+        ll mid = n2 / 2 ;
+        string s3 = s.substr(0,cnt) ;
+        for (ll i = 0 ; i < mid ; i++) {
+            s3.push_back(s2[i]);
+        }
+        for (ll i = ind ; i < n ; i++) {
+            s3.push_back(s[i]);
+        }
+        for (ll i = mid ; i < n2 ; i++) {
+            s3.push_back(s2[i]);
+        }
+        cout << s3;
+    }
+    else {
+        cout << "Impossible";
+    }
+
+
+}
+
+int main() {
+    George;
+    int t = 1;
+    //cin >> t;
+
+    while (t--)
+        solve();
+
+}
