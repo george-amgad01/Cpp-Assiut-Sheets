@@ -1,0 +1,47 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define nl '\n'
+#define George ios_base::sync_with_stdio(false); cin.tie(0);cout.tie(0)
+void solve() {
+    ll n ; cin >> n ;
+    ll num = n , cnt = 0  ;
+    vector<ll> v ;
+    set<ll> s ;
+    for (ll i = 2 ; i <= num ; i++) {
+        if (n == 1 ){break; }
+        while (n % i == 0) {
+            v.push_back(i);
+            n /= i ;
+        }
+
+    }
+    if (n!= 1) {
+        cout << '(' << num << '^' << 1 << ')' ;
+    }
+    else {
+        for (ll i = 0 ; i < v.size() ; i++ ) {
+            s.insert(v[i]);
+        }
+        for (ll element : s ) {
+            if (element == v[v.size() - 1]) {
+                cnt = count(v.begin(), v.end(), element);
+                cout << '(' << element << '^' << cnt << ')' ;
+            }
+            else {
+                cnt = count(v.begin(), v.end(), element);
+                cout << '(' << element << '^' << cnt << ')' <<'*' ;
+            }
+        }
+    }
+
+}
+int main() {
+    George;
+    int t =1  ;
+    //cin >> t;
+
+    while (t--) {
+        solve();
+    }
+}
