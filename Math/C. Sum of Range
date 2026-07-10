@@ -1,0 +1,47 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define nl '\n'
+#define George ios_base::sync_with_stdio(false); cin.tie(0);cout.tie(0)
+void solve() {
+    ll a, b ;
+    cin >> a >> b ;
+    ll n = abs(a - b) +1  ;
+    ll mn = min(a, b) ;
+    ll total = 0 , res_odd = 0 ,res_even = 0 ;
+    if (n % 2 == 0) {
+        if (mn % 2 == 0) {
+            total = (a+b)* (n/2) ;
+            res_odd = ((a+b+1)/2) * n/2;
+            res_even = ((a+b-1)/2) * n/2;
+        }
+
+        else {
+        total = (a+b)* (n/2) ;
+        res_even = ((a+b+1)/2) * n/2;
+        res_odd = ((a+b-1)/2) * n/2;
+        }
+}
+    else {
+        total = ((a+b)* (n/2)) + ((a+b)/2) ;
+        if (mn % 2 == 0) {
+            res_even = ((a+b) / 2 ) * ((n/2) +1);
+            res_odd = ((a+b) / 2 ) * (n/2) ;
+        }
+        else {
+            res_odd = ((a+b) / 2 ) * ((n/2) +1);
+            res_even = ((a+b) / 2 ) * (n/2);
+        }
+    }
+    cout << total << nl << res_even << nl << res_odd ;
+}
+
+int main() {
+    George;
+    int t = 1 ;
+    //cin >> t;
+
+    while (t--) {
+        solve();
+    }
+}
