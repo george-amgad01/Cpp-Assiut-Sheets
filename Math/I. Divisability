@@ -1,0 +1,51 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define nl '\n'
+#define George ios_base::sync_with_stdio(false); cin.tie(0);cout.tie(0)
+void solve() {
+    ll a , b , x ;
+    cin >> a >> b >> x ;
+    ll mx = max(a,b) , mn = min (a,b);
+    ll n1 = mx / x , n2 = 0 ,freq = 0 ,res2 = 0 ;
+    if ( mn == x) {
+        cout << ((n1 * (n1+1)) / 2) * x ;
+    }
+    else if (mn %  x == 0 ) {
+        n2 = (mn / x) ;
+        freq = (n1 - n2)+1 ; // freq // 3
+        if (freq % 2 == 1 ) {
+            res2 = ((n1 + n2)/2) * freq ;
+            cout << res2 * x ;
+        }
+        else {
+            res2 = (n1 + n2) * (freq / 2 )  ; // 2 3 4 5
+            cout << res2 * x ;
+        }
+    }
+
+    else {
+        n2 = (mn / x) +1 ;
+        freq = (n1 - n2)+1 ; // freq // 3
+        if (freq % 2 == 1 ) {
+            res2 = ((n1 + n2)/2) * freq ;
+            cout << res2 * x ;
+        }
+        else {
+            res2 = (n1 + n2) * (freq / 2 )  ; // 2 3 4 5
+            cout << res2 * x ;
+        }
+
+    }
+
+}
+
+int main() {
+    George;
+    int t =1  ;
+    //cin >> t;
+
+    while (t--) {
+        solve();
+    }
+}
