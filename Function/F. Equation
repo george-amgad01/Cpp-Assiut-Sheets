@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define nl '\n'
+#define George ios_base::sync_with_stdio(false); cin.tie(0);cout.tie(0)
+
+ll equation (ll a,ll b,ll res) {
+    if (b < 2 ) {return 0;}
+    else {
+        for (ll i = 2 ; i <= b ; i++) {
+            if (i % 2 == 0) {
+                res += pow(a,i) ;
+            }
+        }
+        return res ;
+    }
+
+}
+
+int main() {
+    George;
+    int t =1  ;
+    //cin >> t;
+    while (t--) {
+        ll a , b , res = 0 ;
+        cin >> a >> b ;
+        cout << equation(a,b,res);
+
+    }
+}
