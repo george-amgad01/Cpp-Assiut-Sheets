@@ -1,0 +1,20 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define nl '\n'
+#define George ios_base::sync_with_stdio(false); cin.tie(0);cout.tie(0)
+
+ll add (ll a, ll b) {
+    return a + b;
+}
+
+int main() {
+    George;
+    int t =1  ;
+    //cin >> t;
+    ll a , b ;
+    cin >> a >> b ;
+    while (t--) {
+        cout << add(a, b) ;
+    }
+}
