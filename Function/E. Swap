@@ -1,0 +1,20 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define nl '\n'
+#define George ios_base::sync_with_stdio(false); cin.tie(0);cout.tie(0)
+void swapping (ll a,ll b) {
+    swap(a,b) ;
+    cout << a << " " << b ;
+}
+
+int main() {
+    George;
+    int t =1  ;
+    //cin >> t;
+    while (t--) {
+        ll a , b ;
+        cin >> a >> b ;
+        swapping(a,b);
+    }
+}
