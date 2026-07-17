@@ -1,0 +1,95 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define dd double
+#define nl '\n'
+#define George ios_base::sync_with_stdio(false); cin.tie(0);cout.tie(0)
+void solve(){
+    }
+void max ( ll n , vector<ll> v ) {
+    ll max = v[0] ;
+    for (ll i = 1 ; i < n ; i++ ) {
+        if (v[i] > max) { max = v[i] ; }
+    }
+    cout << "The maximum number : " << max << nl ;
+}
+void min (ll n , vector<ll> v ) {
+    ll min = v[0] ;
+    for (ll i = 1 ; i < n ; i++ ) {
+        if (v[i] < min) { min = v[i] ; }
+    }
+    cout << "The minimum number : " << min << nl ;
+}
+void prime_count (ll n , vector<ll> v) {
+    ll cnt = 0 ;
+    bool f = 0 ;
+    for (ll i = 0 ; i < n ; i++ ) {
+        if (v[i] < 2 ) {continue;}
+        f = 0 ;
+        for (ll x = 2 ; x*x <= v[i] ; x++ ) {
+            if (v[i] % x == 0) {
+                f = 1 ;
+                break;
+            }
+        }
+        if (!f) {cnt++ ;}
+    }
+    cout <<"The number of prime numbers : " << cnt << nl;
+}
+void palindrome ( ll n , vector<ll> v ) {
+    ll num = 0 , rem = 0 , cnt = 0 ;
+    for (ll i = 0 ; i < n ; i++ ) {
+        ll goal = v[i] ;
+        num = 0 ;
+        rem = 0 ;
+        while (goal > 0 ) {
+            rem = goal % 10;  // 125   5 2 1
+            num = (num*10 ) + rem ;   // 5 2 1
+            goal /= 10 ;
+        }
+        if (v[i] == num) {cnt ++;}
+    }
+    cout << "The number of palindrome numbers : " << cnt << nl;
+}
+
+void divisors (ll n , vector<ll> v , vector<ll>& d) {
+    sort(v.begin(), v.end());
+    ll cnt = 1 ;
+    for (ll i = 0 ; i < n ; i++ ) {
+        cnt= 0 ;
+        for (ll j = 1 ; j *j <= v[i] ; j++ ) {
+            if (j*j == v[i]) {cnt ++;}
+            else if (v[i] % j == 0 ) {
+                cnt+=2 ;
+            }
+        }
+        d.push_back(cnt);
+    }
+    ll mx = *max_element(d.begin(), d.end()) ;
+    ll ans = 0 ;
+    for (ll i = 0 ; i < d.size() ; i++ ) {
+        if (d[i] == mx) {ans = v[i] ;}
+    }
+    cout << "The number that has the maximum number of divisors : " << ans ;
+}
+
+int main() {
+    George;
+    int t =1  ;
+    //cin >> t;
+    while (t--) {
+        ll n ;
+        cin >> n ;
+        vector<ll> v (n) ;
+        vector <ll> d ;
+        for (ll i = 0 ; i < n ; i++){
+            cin >> v [i] ;
+        }
+
+        max (n , v) ;
+        min (n , v) ;
+        prime_count (n , v) ;
+        palindrome(n,v) ;
+        divisors (n , v , d) ;
+    }
+}
