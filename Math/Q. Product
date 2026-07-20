@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define dd double
+#define nl '\n'
+#define George ios_base::sync_with_stdio(false); cin.tie(0);cout.tie(0)
+void solve() {
+    ll l , r , m ;
+    cin >> l >> r >> m ;
+    ll res = 1 ;
+    for (ll i = l ; i <= r ; i++) {
+        res *= i % m ;
+        res %= m ;
+    }
+    cout << res ;
+}
+
+int main() {
+    George;
+    int t =1  ;
+    //cin >> t;
+
+    while (t--) {
+        solve();
+    }
+}
