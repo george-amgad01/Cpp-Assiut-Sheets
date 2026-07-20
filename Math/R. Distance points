@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define dd double
+#define nl '\n'
+#define George ios_base::sync_with_stdio(false); cin.tie(0);cout.tie(0)
+void solve() {
+    cout << fixed << setprecision(9) ;
+    dd x, y ,x2 ,y2 ;
+    cin >> x >> y >> x2 >> y2 ;
+    dd x_axis = abs (x-x2) * abs (x-x2) ;
+    dd y_axis = abs (y-y2) * abs (y-y2);
+    dd res = sqrt(x_axis + y_axis ) ;
+    cout << res ;
+}
+
+int main() {
+    George;
+    int t =1  ;
+    //cin >> t;
+
+    while (t--) {
+        solve();
+    }
+}
