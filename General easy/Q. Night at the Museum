@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define dd double
+#define nl '\n'
+#define George ios_base::sync_with_stdio(false); cin.tie(0);cout.tie(0)
+void solve() {
+    char c [27] = {'.', 'a', 'b', 'c','d' , 'e' , 'f' , 'g' , 'h' , 'i' , 'j' , 'k' , 'l' , 'm' , 'n' , 'o' , 'p' , 'q' , 'r' , 's' , 't'  , 'u' , 'v' , 'w' , 'x' , 'y' , 'z' } ;
+    ll ind = 1 , cnt = 0 , goal = 0 , res = 0 , res2 = 0 ;
+    string s;
+    cin >> s;
+    for (ll i = 0 ; i < s.length(); i++) {
+        goal = find(c,c+27,s[i]) -c ;
+        res = max(ind , goal) - min(ind, goal);
+        res2 = abs((26 - max(ind , goal)) + min(ind, goal));
+        cnt+= min(res , res2);
+        ind = goal ;
+    }
+    cout << cnt ;
+}
+
+int main() {
+    George;
+    int t =1   ;
+    //cin >> t;
+    while (t--) {
+        solve();
+    }
+}
