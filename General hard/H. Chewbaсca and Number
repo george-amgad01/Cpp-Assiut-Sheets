@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define dd double
+#define nl '\n'
+#define George ios_base::sync_with_stdio(false); cin.tie(0);cout.tie(0)
+
+
+void solve () {
+    ll n ; cin >> n ;
+    string s = to_string (n) , s2 ;
+    ll n2 = s.size() , x , x2 ;
+    x = s[0] - '0';
+    x2 = 9 - x ;
+    if (min (x,x2) == 0 ) {
+        x2 = max (x,x2 ) ;
+    }
+    else {
+        x2 = min (x,x2 ) ;
+    }
+    char c = x2 +'0' ;
+    s2.push_back(c) ;
+
+    for (int i = 1 ; i < n2 ; ++i ) {
+        x = s[i] - '0' ;
+        x2 = 9 - x ;
+        x2 = min (x,x2 ) ;
+        char c = x2 +'0' ;
+        s2.push_back(c) ;
+    }
+
+    cout << s2 ;
+    
+}
+
+int main() {
+    George;
+    int t =1 ;
+    // cin >> t;
+    while (t--) {
+        solve();
+    }
+}
