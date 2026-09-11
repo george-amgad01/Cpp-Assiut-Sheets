@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define dd double
+#define nl '\n'
+#define George ios_base::sync_with_stdio(false); cin.tie(0);cout.tie(0)
+
+
+void solve () {
+    ll e , m,  b , cnt = 0;
+    cin >> e >> m >> b ;
+
+    cnt = min ({e,b,m}) ;
+    e -= cnt ;
+    b -= cnt ; 
+    m -= cnt ;
+    e /= 2 ;
+    cnt += min(e,b) ;
+    cout << cnt ;
+}
+// 33 -- 65
+int main() {
+    George;
+    int t =1 ;
+    //cin >> t;
+    while (t--) {
+        solve();
+    }
+}
