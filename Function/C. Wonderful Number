@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define dd double
+#define nl '\n'
+#define George ios_base::sync_with_stdio(false); cin.tie(0);cout.tie(0)
+
+bool tobinary (ll n ) {
+    string s = "" , s2 ;
+    while (n > 0 ) {
+        s.push_back('0' + n % 2);
+        n /= 2;
+    }
+    s2 = s ;
+    reverse(s2.begin(), s2.end());
+    if (s == s2) return true ;
+    return false ;
+}
+
+void solve () {
+    ll n ; cin >> n ;
+    if (n % 2 == 0 ) {cout << "NO" ; return ;} ;
+
+    if (tobinary(n)) cout << "YES" ;
+    else cout << "NO" ;
+}
+int main() {
+    George;
+    int t =1  ;
+    // cin >> t;
+    while (t--) {
+        solve();
+    }
+}
