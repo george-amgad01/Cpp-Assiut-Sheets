@@ -1,0 +1,53 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define dd double
+#define nl '\n'
+#define George ios_base::sync_with_stdio(false); cin.tie(0);cout.tie(0)
+
+
+void solve () {
+    string s ,s2 ; cin >> s >> s2;
+    int n = s.length() ,ind = 0 , ind2 = 0 ;
+    bool f =0 ;
+    map<char,int> mp ;
+    if (s.size() != s2.size()) {cout << "NO" ; return;}
+    for (int i = 0 ; i < n ; ++i) {
+        if (s[i] != s2[i]) {
+            ind = i ;
+            break ;
+        }
+    }
+    for (int i = n -1 ; i >= 0 ; --i) {
+        if (s[i] != s2[i] ) {
+            ind2 = i ;
+            break ;
+        }
+    }
+    if (s == s2) {
+        for (int i= 0 ; i < n ; ++ i ) {
+            mp[s[i]] ++ ;
+            if (mp[s[i]] > 1 ) {
+                f=1 ; break ;
+            }
+        }
+        if (f) cout << "YES" ;
+        else cout << "NO" ;
+    }
+    else {
+        swap (s[ind], s[ind2]);
+        if (s == s2 ) cout << "YES" ;
+        else cout << "NO" ;
+    }
+
+
+}
+// 33 -- 65
+int main() {
+    George;
+    int t =1 ;
+    //cin >> t;
+    while (t--) {
+        solve();
+    }
+}
