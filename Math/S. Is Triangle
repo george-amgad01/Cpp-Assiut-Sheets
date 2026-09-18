@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define nl '\n'
+#define George ios_base::sync_with_stdio(false); cin.tie(0);cout.tie(0)
+void solve() {
+    // add half substract apply root
+    cout << fixed << setprecision(6) ;
+    vector<int> v (3);
+    cin >> v[0] >> v[1] >> v[2];
+    sort(v.begin(), v.end());
+    double a = v[0], b = v[1], c = v[2] , sm = (a+b+c) / 2  , res = 0 ;
+
+    if (a + b  > c) {
+        a= sm -a ;
+        b= sm -b ;
+        c= sm -c ;
+        res = sm * a * b * c;
+        cout << "Valid" << nl << sqrt(res) ;
+    }
+    else {
+        cout << "Invalid" << nl;
+    }
+}
+int main() {
+    George;
+    int t =1  ;
+    //cin >> t;
+
+    while (t--) {
+        solve();
+    }
+}
