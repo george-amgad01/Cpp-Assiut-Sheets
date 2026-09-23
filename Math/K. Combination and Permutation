@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define nl '\n'
+#define George ios_base::sync_with_stdio(false); cin.tie(0);cout.tie(0)
+
+void solve() {
+    ll n , r ; cin >> n >> r ;
+    if (n < r ) {swap(n, r);}
+    ll diff = n - r  , r_fact = 1,x_fact = 1  ;
+    for (int i = 1 ; i <= r ; i++) {
+        r_fact *= i;
+    }
+
+    for (int i = diff +1 ; i <= n ; i++) {
+        x_fact *= i;
+    }
+    ll comp = x_fact  /r_fact;
+    ll perm = x_fact  ;
+    cout << comp << " " << perm << nl;
+
+}
+
+int main() {
+    George;
+    int t = 1;
+    //cin >> t;
+    while (t--) {
+
+        solve() ;
+    }
+}
