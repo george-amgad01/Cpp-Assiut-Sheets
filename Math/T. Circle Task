@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define nl '\n'
+#define George ios_base::sync_with_stdio(false); cin.tie(0);cout.tie(0)
+
+void solve() {
+    ll x , y , r , n ; cin >> x >> y >> r >> n ;
+    r *=r ;
+    while (n-- ) {
+        ll a , b ; cin >> a >> b ;
+        ll x_sq = a - x ; ll y_sq = b - y ;
+        x_sq *= x_sq ; y_sq *= y_sq ;
+        if (x_sq + y_sq <= r) {
+            cout << "YES" << nl ;
+        }
+        else {
+            cout << "NO" << nl ;
+        }
+    }
+}
+
+int main() {
+    George;
+    int t = 1;
+    //cin >> t;
+    while (t--) {
+
+        solve() ;
+    }
+}
