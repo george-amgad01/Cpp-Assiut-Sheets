@@ -5,7 +5,7 @@ using namespace std;
 #define George ios_base::sync_with_stdio(false); cin.tie(0);cout.tie(0)
 
 void solve() {
-   ll n , cnt = 0 , cnt2 = 0  ; cin >> n ;
+    ll n , cnt = 0 , cnt2 = 0  ; cin >> n ;
     vector<ll> a(n);
     for (ll i = 0 ; i < n ; i++) cin >> a[i];
     for (ll i = 0  ; i < n ; i++) {
@@ -13,25 +13,20 @@ void solve() {
             if (a[i] < 0 ) {
                 cnt++ ;
             }
+            else {
+                cnt2++ ;
+            }
         }
         else {
             if (a[i] > 0 ) {
                 cnt++ ;
             }
-        }
-    }
-    for (ll i = 0  ; i < n ; i++) {
-        if (i % 2 == 0 ) {
-            if (a[i] > 0 ) {
-                cnt2++ ;
-            }
-        }
-        else {
-            if (a[i] < 0 ) {
+            else {
                 cnt2++ ;
             }
         }
     }
+
     cout << min (cnt,cnt2) ;
 
 }
