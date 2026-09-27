@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define nl '\n'
+#define George ios_base::sync_with_stdio(false); cin.tie(0);cout.tie(0)
+
+void solve() {
+   ll n , even =0, odd = 0  , diff = 0; cin >> n ;
+    vector<ll> a(n);
+    for (ll i = 0 ; i < n ; i++) {
+        cin >> a[i];
+        if (a[i] % 2 == 0 ) even ++;
+        else odd ++;
+    }
+    if (n % 2 == 1 ) {cout << -1 << nl ; return;}
+
+    diff = max(even , odd ) - min(even , odd );
+    if (diff % 2 == 0 ) cout << diff / 2 << nl  ;
+    else cout << (diff / 2) +1<< nl ;
+
+}
+
+int main() {
+    George;
+    int t ;
+    cin >> t;
+    while (t--) {
+
+        solve() ;
+    }
+}
