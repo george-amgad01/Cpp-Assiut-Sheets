@@ -2,7 +2,6 @@
 
 My solutions for the **Assiut Problem Solving Sheets** in C++.
 
-This repository contains my solutions while practicing **problem solvingg**.
+🔗 **Group link :**
 
-🔗 **Group & Contests:**
 https://codeforces.com/group/MWSDmqGsZm/contests
